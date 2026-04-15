@@ -78,21 +78,29 @@
         .modal-content { background: linear-gradient(145deg, #12162A, #0C0F20); border-radius: 40px; max-width: 900px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 32px; border: 2px solid #FF6B4A; }
         .modal-close { float: right; font-size: 28px; cursor: pointer; color: #FF8A6C; background: rgba(18,22,42,0.9); padding: 5px 12px; border-radius: 30px; margin: -10px -10px 0 0; }
         
+        /* Survey Popup Melhorado */
         .survey-popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(12px); z-index: 2000; justify-content: center; align-items: center; padding: 16px; }
-        .survey-popup-content { background: linear-gradient(145deg, #12162A, #0C0F20); border-radius: 48px; max-width: 500px; width: 100%; padding: 40px 32px; text-align: center; border: 2px solid #FF6B4A; }
-        .survey-food-icon { font-size: 4rem; margin-bottom: 20px; }
-        .survey-food-name { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg, #FFE6D5, #FFB49A); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 25px; }
+        .survey-popup-content { background: linear-gradient(145deg, #12162A, #0C0F20); border-radius: 48px; max-width: 500px; width: 100%; padding: 32px 28px; text-align: center; border: 2px solid #FF6B4A; position: relative; }
+        .survey-close { position: absolute; top: 16px; right: 20px; background: rgba(255,77,140,0.2); border: none; color: #FF8A6C; font-size: 1.3rem; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .survey-close:hover { background: #FF4D8C; color: white; transform: scale(1.1); }
+        .survey-food-icon { font-size: 4rem; margin-bottom: 16px; margin-top: 10px; }
+        .survey-food-name { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg, #FFE6D5, #FFB49A); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 20px; word-break: break-word; }
         .survey-category-badge { background: rgba(255, 107, 74, 0.2); padding: 6px 16px; border-radius: 40px; font-size: 0.8rem; color: #FF8A6C; display: inline-block; margin-bottom: 20px; }
-        .survey-options { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 30px; }
-        .survey-option-btn { background: #1E243E; border: 2px solid #3A3F60; padding: 14px 24px; border-radius: 60px; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s; font-size: 1rem; }
+        .survey-options { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 25px; }
+        .survey-option-btn { background: #1E243E; border: 2px solid #3A3F60; padding: 12px 20px; border-radius: 60px; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s; font-size: 0.95rem; }
         .survey-option-btn:hover { transform: translateY(-3px); border-color: #FF6B4A; background: #2A2F50; }
-        .survey-progress { margin-top: 20px; font-size: 0.85rem; color: #8A8FAD; }
-        .survey-progress-bar { width: 100%; height: 6px; background: #2A2F4A; border-radius: 10px; margin-top: 12px; overflow: hidden; }
+        .survey-nav { display: flex; justify-content: space-between; gap: 15px; margin-top: 15px; }
+        .survey-nav-btn { background: rgba(30, 35, 60, 0.8); border: 1px solid #3A3F60; padding: 10px 20px; border-radius: 60px; color: #B4BAD6; font-weight: 500; cursor: pointer; transition: all 0.3s; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; flex: 1; justify-content: center; }
+        .survey-nav-btn:hover { border-color: #FF6B4A; color: #FF8A6C; background: rgba(255,107,74,0.1); }
+        .survey-nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        .survey-progress { margin-top: 20px; font-size: 0.8rem; color: #8A8FAD; }
+        .survey-progress-bar { width: 100%; height: 6px; background: #2A2F4A; border-radius: 10px; margin-top: 10px; overflow: hidden; }
         .survey-progress-fill { height: 100%; background: linear-gradient(90deg, #FF6B4A, #FF4D8C); border-radius: 10px; transition: width 0.3s ease; }
-        .survey-skip { background: transparent; border: none; color: #6C6F8F; cursor: pointer; margin-top: 16px; font-size: 0.8rem; }
+        .survey-skip { background: transparent; border: none; color: #6C6F8F; cursor: pointer; margin-top: 12px; font-size: 0.75rem; transition: all 0.3s; width: 100%; }
         .survey-skip:hover { color: #FF8A6C; }
         .survey-suggestion-area { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,107,74,0.3); }
         .survey-suggestion-area textarea { width: 100%; padding: 12px 16px; background: #0F1322; border: 1.5px solid #2A2F48; border-radius: 20px; color: white; font-family: inherit; font-size: 0.9rem; resize: vertical; }
+        .survey-suggestion-area textarea:focus { outline: none; border-color: #FF6B4A; }
         
         .food-analysis-card { background: #12162A; border-radius: 20px; padding: 16px; border: 1px solid #2A2F4A; margin-bottom: 12px; }
         .food-analysis-name { font-weight: 700; color: #FF8A6C; margin-bottom: 12px; }
@@ -124,9 +132,10 @@
             .chart-grid { grid-template-columns: 1fr; }
             .chart-container { height: 220px; }
             .card-glass { padding: 20px; margin-bottom: 16px; }
-            .survey-option-btn { padding: 10px 18px; font-size: 0.85rem; }
-            .survey-popup-content { padding: 30px 20px; }
+            .survey-option-btn { padding: 10px 16px; font-size: 0.85rem; }
+            .survey-popup-content { padding: 28px 20px; }
             .data-table th, .data-table td { padding: 10px 8px; font-size: 0.75rem; }
+            .survey-nav-btn { padding: 8px 12px; font-size: 0.75rem; }
         }
     </style>
 </head>
@@ -211,6 +220,7 @@
 
 <div id="surveyPopup" class="survey-popup">
     <div class="survey-popup-content">
+        <button class="survey-close" id="closeSurveyBtn"><i class="fas fa-times"></i></button>
         <div id="surveyQuestionsArea">
             <div class="survey-food-icon" id="surveyIcon">🍽️</div>
             <div class="survey-category-badge" id="surveyCategory"></div>
@@ -220,6 +230,10 @@
                 <button class="survey-option-btn" id="answerGosto">😊 GOSTO</button>
                 <button class="survey-option-btn" id="answerTantoFaz">😐 TANTO FAZ</button>
                 <button class="survey-option-btn" id="answerNaoGosto">😞 NÃO GOSTO</button>
+            </div>
+            <div class="survey-nav">
+                <button class="survey-nav-btn" id="prevQuestionBtn"><i class="fas fa-arrow-left"></i> Voltar</button>
+                <button class="survey-nav-btn" id="nextQuestionBtn" style="display:none;">Próximo <i class="fas fa-arrow-right"></i></button>
             </div>
             <div class="survey-progress"><span id="surveyProgressText"></span><div class="survey-progress-bar"><div class="survey-progress-fill" id="surveyProgressFill"></div></div></div>
             <button class="survey-skip" id="skipFoodBtn">⏩ Pular este item</button>
@@ -331,26 +345,18 @@
             } catch (error) { console.error('Erro:', error); return false; }
         }
         
-        // FUNÇÃO DEFINITIVA - Usa a RPC que criamos no Supabase
         async function deleteAllAlunos() {
             try {
-                // Chamar a função SQL que criamos
                 const { error } = await supabaseClient.rpc('force_delete_all_alunos');
-                
                 if (error) {
-                    console.error('Erro na RPC:', error);
-                    // Tentar método alternativo
                     const { data: alunos, error: fetchError } = await supabaseClient.from('respostas_alunos').select('id');
                     if (fetchError) throw fetchError;
                     if (!alunos || alunos.length === 0) return true;
-                    
                     for (const aluno of alunos) {
                         await supabaseClient.from('respostas_alunos').delete().eq('id', aluno.id);
                     }
                     return true;
                 }
-                
-                console.log('Deleção via RPC bem-sucedida');
                 return true;
             } catch (error) {
                 console.error('Erro ao deletar todos:', error);
@@ -412,13 +418,60 @@
             document.getElementById("surveyCategory").innerHTML = '<i class="fas fa-tag"></i> ' + f.category;
             document.getElementById("surveyIcon").innerHTML = f.icon;
             let total = currentFoods.length;
-            let progress = (currentIndex / total) * 100;
+            let progress = ((currentIndex) / total) * 100;
             document.getElementById("surveyProgressFill").style.width = progress + "%";
             document.getElementById("surveyProgressText").innerHTML = "Pergunta " + (currentIndex + 1) + " de " + total;
+            
+            // Habilitar/desabilitar botão voltar
+            const prevBtn = document.getElementById("prevQuestionBtn");
+            if(prevBtn) {
+                if(currentIndex === 0) {
+                    prevBtn.disabled = true;
+                    prevBtn.style.opacity = "0.5";
+                } else {
+                    prevBtn.disabled = false;
+                    prevBtn.style.opacity = "1";
+                }
+            }
         }
         
-        function answerFood(ans) { let f = currentFoods[currentIndex]; currentAnswers[f.item] = ans; currentIndex++; showCurrentFood(); }
-        function skipFood() { let f = currentFoods[currentIndex]; currentAnswers[f.item] = "TANTO FAZ"; currentIndex++; showCurrentFood(); }
+        function goToPreviousQuestion() {
+            if(currentIndex > 0) {
+                currentIndex--;
+                showCurrentFood();
+            }
+        }
+        
+        function answerFood(ans) { 
+            let f = currentFoods[currentIndex]; 
+            currentAnswers[f.item] = ans; 
+            currentIndex++; 
+            if(currentIndex < currentFoods.length) {
+                showCurrentFood();
+            } else {
+                showCurrentFood(); // Isso vai mostrar a área de sugestão
+            }
+        }
+        
+        function skipFood() { 
+            let f = currentFoods[currentIndex]; 
+            currentAnswers[f.item] = "TANTO FAZ"; 
+            currentIndex++; 
+            if(currentIndex < currentFoods.length) {
+                showCurrentFood();
+            } else {
+                showCurrentFood();
+            }
+        }
+        
+        function cancelSurvey() {
+            if(confirm("❌ Cancelar pesquisa?\n\nTodas as respostas não salvas serão perdidas.\n\nDeseja realmente cancelar?")) {
+                document.getElementById("surveyPopup").style.display = "none";
+                document.getElementById("popupSuggestion").value = "";
+                currentAnswers = {};
+                currentIndex = 0;
+            }
+        }
         
         async function finishSurvey() {
             let suggestion = document.getElementById("popupSuggestion").value.trim();
@@ -543,7 +596,6 @@
                     deleteBtn.style.opacity = '1';
                     
                     if (sucesso) {
-                        // Recarregar dados
                         students = await fetchAlunos();
                         updateFilters(); 
                         showSuggestions();
@@ -693,6 +745,8 @@
         window.closeModal = closeModal;
         window.updateTurmasByShift = updateTurmasByShift;
         window.toggleMenu = toggleMenu;
+        window.goToPreviousQuestion = goToPreviousQuestion;
+        window.cancelSurvey = cancelSurvey;
         
         document.getElementById("menuToggle").addEventListener("click", toggleMenu);
         document.getElementById("menuOverlay").addEventListener("click", closeMenu);
@@ -706,11 +760,13 @@
         document.getElementById("filterBtn").addEventListener("click", filterStudentList);
         document.getElementById("deleteAllBtn").addEventListener("click", deleteAllDataTemp);
         document.getElementById("closeModalBtn").addEventListener("click", closeModal);
+        document.getElementById("closeSurveyBtn").addEventListener("click", cancelSurvey);
         document.getElementById("answerAdoro").addEventListener("click", () => answerFood("ADORO"));
         document.getElementById("answerGosto").addEventListener("click", () => answerFood("GOSTO"));
         document.getElementById("answerTantoFaz").addEventListener("click", () => answerFood("TANTO FAZ"));
         document.getElementById("answerNaoGosto").addEventListener("click", () => answerFood("NAO GOSTO"));
         document.getElementById("skipFoodBtn").addEventListener("click", skipFood);
+        document.getElementById("prevQuestionBtn").addEventListener("click", goToPreviousQuestion);
         document.getElementById("finishSurveyBtn").addEventListener("click", finishSurvey);
         document.getElementById("studentShift").addEventListener("change", updateTurmasByShift);
         document.getElementById("responseModal").addEventListener("click", function(e) { if(e.target === this) closeModal(); });
