@@ -74,6 +74,10 @@
         .nav-item:hover { background: rgba(255,107,74,0.15); color: #FF6B4A; transform: translateX(5px); }
         .nav-item.active { background: linear-gradient(95deg, rgba(255,107,74,0.25), rgba(255,77,140,0.15)); color: #FF8A6C; border-left: 3px solid #FF6B4A; }
         
+        .nav-item.novo-alimento { border-left: 3px solid transparent; }
+        .nav-item.novo-alimento.active { border-left-color: #00E5FF; background: linear-gradient(95deg, rgba(0,229,255,0.2), rgba(0,229,255,0.05)); color: #00E5FF; }
+        .nav-item.novo-alimento:hover { background: rgba(0,229,255,0.15); color: #00E5FF; }
+        
         .mobile-header { display: none; position: fixed; top: 0; left: 0; right: 0; background: rgba(12,15,28,0.95); backdrop-filter: blur(16px); padding: 16px 20px; z-index: 100; border-bottom: 1px solid rgba(255,107,74,0.3); }
         .mobile-header h1 { font-size: 1.2rem; font-weight: 700; background: linear-gradient(135deg, #FF6B4A, #FF4D8C); -webkit-background-clip: text; background-clip: text; color: transparent; }
         .menu-toggle { background: none; border: none; color: #FF8A6C; font-size: 1.5rem; cursor: pointer; padding: 8px; }
@@ -88,16 +92,23 @@
         .input-group label { font-weight: 600; color: #C2C8E8; margin-bottom: 8px; display: block; font-size: 0.9rem; }
         .input-group label i { margin-right: 8px; color: #FF6B4A; }
         .input-group input, .input-group select { width: 100%; padding: 14px 18px; background: #0F1322; border: 1.5px solid #2A2F48; border-radius: 24px; color: white; font-size: 0.95rem; }
+        .input-group input::placeholder { color: #5A5F7A; }
         
         .btn-start { background: linear-gradient(105deg, #FF6B4A, #FF4D8C); border: none; padding: 16px 32px; border-radius: 60px; font-weight: 700; color: white; cursor: pointer; width: 100%; font-size: 1.1rem; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 12px; }
         .btn-start:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,74,0.4); }
         .btn-primary { background: linear-gradient(105deg, #FF6B4A, #FF4D8C); border: none; padding: 12px 28px; border-radius: 60px; font-weight: 600; color: white; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
         .btn-secondary { background: rgba(30,35,60,0.9); border: 1px solid #FF6B4A; }
+        .btn-aceitabilidade { background: linear-gradient(105deg, #00E5FF, #00B4D8); border: none; padding: 16px 32px; border-radius: 60px; font-weight: 700; color: #0B0D17; cursor: pointer; width: 100%; font-size: 1.1rem; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 12px; }
+        .btn-aceitabilidade:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,229,255,0.4); }
+        .btn-success { background: linear-gradient(105deg, #4CAF50, #2E7D32); border: none; padding: 10px 20px; border-radius: 60px; font-weight: 600; color: white; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-success:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(76,175,80,0.4); }
         
-        .kpi-grid, .saude-kpi-grid, .restricoes-kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 25px; }
-        .kpi-card, .saude-kpi-card, .restricoes-kpi-card { background: linear-gradient(145deg, #12162A, #0C0F20); border-radius: 28px; padding: 20px; text-align: center; border: 1px solid #2A2F4A; cursor: pointer; transition: all 0.3s; }
-        .kpi-card:hover, .saude-kpi-card:hover, .restricoes-kpi-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255,107,74,0.2); border-color: #FF6B4A; }
-        .kpi-value, .saude-kpi-value, .restricoes-kpi-value { font-size: 2.2rem; font-weight: 800; background: linear-gradient(135deg, #FF8A6C, #FF6B4A); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .kpi-grid, .saude-kpi-grid, .restricoes-kpi-grid, .aceitabilidade-kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 25px; }
+        .kpi-card, .saude-kpi-card, .restricoes-kpi-card, .aceitabilidade-kpi-card { background: linear-gradient(145deg, #12162A, #0C0F20); border-radius: 28px; padding: 20px; text-align: center; border: 1px solid #2A2F4A; cursor: pointer; transition: all 0.3s; }
+        .kpi-card:hover, .saude-kpi-card:hover, .restricoes-kpi-card:hover, .aceitabilidade-kpi-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255,107,74,0.2); border-color: #FF6B4A; }
+        .aceitabilidade-kpi-card:hover { border-color: #00E5FF; box-shadow: 0 10px 25px rgba(0,229,255,0.2); }
+        .kpi-value, .saude-kpi-value, .restricoes-kpi-value, .aceitabilidade-kpi-value { font-size: 2.2rem; font-weight: 800; background: linear-gradient(135deg, #FF8A6C, #FF6B4A); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .aceitabilidade-kpi-value { background: linear-gradient(135deg, #00E5FF, #00B4D8); -webkit-background-clip: text; background-clip: text; color: transparent; }
         
         .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 28px; }
         .stat-card { background: #12162A; border-radius: 24px; padding: 18px; text-align: center; border: 1px solid #2A2F4A; }
@@ -107,13 +118,14 @@
         .chart-card { background: #12162A; border-radius: 28px; padding: 20px; border: 1px solid #2A2F4A; }
         .chart-container { height: 280px; margin-top: 12px; }
         
-        .students-table-container, .saude-table-container, .restricoes-table-container { width: 100%; overflow-x: auto; border-radius: 20px; margin-top: 15px; }
-        .data-table, .saude-table, .restricoes-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 500px; }
+        .students-table-container, .saude-table-container, .restricoes-table-container, .aceitabilidade-table-container { width: 100%; overflow-x: auto; border-radius: 20px; margin-top: 15px; }
+        .data-table, .saude-table, .restricoes-table, .aceitabilidade-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 500px; }
         .data-table th { text-align: left; padding: 16px 12px; background: rgba(255,107,74,0.15); color: #FF8A6C; font-weight: 600; border-bottom: 2px solid #FF6B4A; }
         .data-table td { padding: 14px 12px; border-bottom: 1px solid #2A2F4A; vertical-align: middle; }
         .saude-table th { background: rgba(76,175,80,0.2); color: #4CAF50; padding: 12px; text-align: left; border-bottom: 2px solid #4CAF50; }
         .saude-table td, .restricoes-table td { padding: 10px 12px; border-bottom: 1px solid #2A2F4A; }
         .restricoes-table th { background: rgba(255,193,7,0.2); color: #FFC107; padding: 12px; text-align: left; border-bottom: 2px solid #FFC107; }
+        .aceitabilidade-table th { background: rgba(0,229,255,0.2); color: #00E5FF; padding: 12px; text-align: left; border-bottom: 2px solid #00E5FF; }
         
         .student-name-cell { color: #FF8A6C; font-weight: 600; cursor: pointer; }
         .delete-btn { background: rgba(255,77,140,0.2); border: 1px solid #FF4D8C; color: #FF8A6C; padding: 6px 16px; border-radius: 40px; cursor: pointer; transition: all 0.3s; font-size: 0.8rem; }
@@ -122,9 +134,15 @@
         .saude-edit-btn:hover, .restricao-edit-btn:hover { background: #2196F3; color: white; }
         
         .restricao-tag { display: inline-block; background: rgba(255,193,7,0.2); color: #FFC107; padding: 4px 10px; border-radius: 20px; font-size: 0.7rem; margin: 2px; border: 1px solid #FFC107; }
+        .aceitabilidade-status { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
+        .status-adorei { background: rgba(76,175,80,0.3); color: #4CAF50; border: 1px solid #4CAF50; }
+        .status-gostei { background: rgba(33,150,243,0.3); color: #2196F3; border: 1px solid #2196F3; }
+        .status-nao-gostei { background: rgba(244,67,54,0.3); color: #F44336; border: 1px solid #F44336; }
+        .status-nao-comi { background: rgba(255,193,7,0.3); color: #FFC107; border: 1px solid #FFC107; }
         
         .filters-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; align-items: center; }
         .filters-bar select, .filters-bar input { background: #12162A; border: 1px solid #2A2F4A; border-radius: 40px; padding: 10px 20px; color: white; }
+        .filters-bar select option { background: #12162A; }
         
         .panel { display: none; }
         .active-panel { display: block; animation: fadeIn 0.4s ease; }
@@ -195,19 +213,39 @@
         .saude-info-label { font-weight: 600; color: #B4BAD6; }
         .saude-info-value { font-weight: 500; color: #FFE6D5; }
         
+        .novo-alimento-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .novo-alimento-form .input-group { margin-bottom: 0; }
+        .alimento-resultado-card { background: linear-gradient(145deg, #12162A, #0C0F20); border-radius: 24px; padding: 20px; border-left: 4px solid #00E5FF; margin-bottom: 16px; }
+        .alimento-resultado-card .resultado-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .alimento-resultado-card .resultado-nome { font-size: 1.2rem; font-weight: 700; color: #00E5FF; }
+        
+        .alimento-list-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; border-bottom: 1px solid #2A2F4A; }
+        .alimento-list-item:hover { background: rgba(0,229,255,0.05); }
+        .alimento-tag { display: inline-block; background: rgba(0,229,255,0.15); color: #00E5FF; padding: 2px 12px; border-radius: 20px; font-size: 0.7rem; border: 1px solid rgba(0,229,255,0.3); }
+        
+        .voto-adorei { background: linear-gradient(105deg, #4CAF50, #2E7D32) !important; border-color: #4CAF50 !important; }
+        .voto-gostei { background: linear-gradient(105deg, #2196F3, #0D47A1) !important; border-color: #2196F3 !important; }
+        .voto-nao-gostei { background: linear-gradient(105deg, #F44336, #B71C1C) !important; border-color: #F44336 !important; }
+        .voto-nao-comi { background: linear-gradient(105deg, #FFC107, #FF6F00) !important; border-color: #FFC107 !important; color: #0B0D17 !important; }
+        .voto-nao-comi:hover { color: #0B0D17 !important; }
+        
+        .btn-finalizar-aceitabilidade { background: linear-gradient(105deg, #00E5FF, #00B4D8); border: none; padding: 12px 28px; border-radius: 60px; font-weight: 700; color: #0B0D17; cursor: pointer; width: 100%; font-size: 1rem; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; }
+        .btn-finalizar-aceitabilidade:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,229,255,0.4); }
+        
         @media (max-width:768px){
             .mobile-header{display:flex;justify-content:space-between;align-items:center;}
             .sidebar{transform:translateX(-100%);width:260px;z-index:100;}
             .sidebar.open{transform:translateX(0);}
             .main-content{margin-left:0;padding:80px 16px 20px;}
             .form-grid{grid-template-columns:1fr;gap:16px;}
-            .kpi-grid,.saude-kpi-grid,.restricoes-kpi-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
-            .kpi-card,.saude-kpi-card,.restricoes-kpi-card{padding:12px;}
-            .kpi-value,.saude-kpi-value,.restricoes-kpi-value{font-size:1.4rem;}
+            .novo-alimento-form{grid-template-columns:1fr;gap:16px;}
+            .kpi-grid,.saude-kpi-grid,.restricoes-kpi-grid,.aceitabilidade-kpi-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+            .kpi-card,.saude-kpi-card,.restricoes-kpi-card,.aceitabilidade-kpi-card{padding:12px;}
+            .kpi-value,.saude-kpi-value,.restricoes-kpi-value,.aceitabilidade-kpi-value{font-size:1.4rem;}
             .chart-grid{grid-template-columns:1fr;}
             .chart-container{height:220px;}
             .card-glass{padding:20px;margin-bottom:16px;}
-            .data-table th,.data-table td,.saude-table th,.saude-table td,.restricoes-table th,.restricoes-table td{padding:10px 8px;font-size:0.75rem;}
+            .data-table th,.data-table td,.saude-table th,.saude-table td,.restricoes-table th,.restricoes-table td,.aceitabilidade-table th,.aceitabilidade-table td{padding:10px 8px;font-size:0.75rem;}
             .modal-detalhes-content,.modal-saude-detalhes-content{max-width:95%;padding:20px;}
         }
     </style>
@@ -245,6 +283,8 @@
             <div class="nav-item" data-panel="saude"><i class="fas fa-heartbeat"></i><span> Saúde</span></div>
             <div class="nav-item" data-panel="analyticsSaude"><i class="fas fa-chart-line"></i><span> Analytics Saúde</span></div>
             <div class="nav-item" data-panel="restricoes"><i class="fas fa-exclamation-triangle"></i><span> Restrições</span></div>
+            <div class="nav-item novo-alimento" data-panel="testeAceitabilidade"><i class="fas fa-flask"></i><span> Teste de Aceitabilidade</span></div>
+            <div class="nav-item novo-alimento" data-panel="analyticsAceitabilidade"><i class="fas fa-chart-bar"></i><span> Analytics Novo Alimento</span></div>
         </div>
     </div>
 
@@ -353,6 +393,139 @@
                 <div id="restricoesListContainer" class="restricoes-table-container"></div>
             </div>
         </div>
+
+        <!-- PANEL: TESTE DE ACEITABILIDADE -->
+        <div id="testeAceitabilidadePanel" class="panel">
+            <div class="card-glass">
+                <div class="section-title"><i class="fas fa-flask"></i> Teste de Aceitabilidade - Novo Alimento</div>
+                <p style="color:#B4BAD6;margin-bottom:24px;">Cadastre um novo alimento para testar sua aceitação. Cada teste é independente e não requer cadastro prévio do aluno.</p>
+                
+                <!-- Seção para cadastrar novo alimento -->
+                <div style="background:rgba(0,229,255,0.05);border-radius:24px;padding:20px;margin-bottom:24px;border:1px solid rgba(0,229,255,0.2);">
+                    <h4 style="color:#00E5FF;margin-bottom:16px;"><i class="fas fa-plus-circle"></i> Cadastrar Novo Alimento</h4>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                        <div class="input-group"><label><i class="fas fa-utensils"></i> Nome do Alimento *</label><input type="text" id="novoAlimentoNome" placeholder="Ex: Pizza de Frango, Sushi, etc."></div>
+                        <div class="input-group" style="display:flex;align-items:flex-end;">
+                            <button class="btn-success" id="cadastrarAlimentoBtn" style="width:100%;padding:14px 20px;font-size:1rem;">
+                                <i class="fas fa-save"></i> Cadastrar Alimento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lista de alimentos cadastrados -->
+                <div style="margin-bottom:24px;">
+                    <h4 style="color:#B4BAD6;margin-bottom:12px;"><i class="fas fa-list"></i> Alimentos Cadastrados</h4>
+                    <div id="listaAlimentosCadastrados" style="max-height:150px;overflow-y:auto;background:#0F1322;border-radius:16px;padding:8px;border:1px solid #2A2F4A;">
+                        <div style="text-align:center;color:#6C6F8F;padding:20px;">Nenhum alimento cadastrado ainda.</div>
+                    </div>
+                </div>
+
+                <!-- Seção para realizar o teste -->
+                <div style="background:rgba(255,107,74,0.05);border-radius:24px;padding:20px;border:1px solid rgba(255,107,74,0.2);">
+                    <h4 style="color:#FF8A6C;margin-bottom:16px;"><i class="fas fa-rocket"></i> Realizar Teste</h4>
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+                        <div class="input-group"><label><i class="fas fa-utensils"></i> Selecione o Alimento *</label>
+                            <select id="selectAlimentoTeste">
+                                <option value="">Selecione um alimento</option>
+                            </select>
+                        </div>
+                        <div class="input-group"><label><i class="fas fa-user"></i> Nome do Aluno *</label><input type="text" id="nomeAlunoTeste" placeholder="Digite o nome do aluno"></div>
+                        <div class="input-group"><label><i class="fas fa-graduation-cap"></i> Série/Turma *</label>
+                            <select id="turmaAlunoTeste">
+                                <option value="">Selecione a turma</option>
+                                <option value="1º A">1º A</option>
+                                <option value="1º B">1º B</option>
+                                <option value="1º C">1º C</option>
+                                <option value="2º A">2º A</option>
+                                <option value="2º B">2º B</option>
+                                <option value="2º C">2º C</option>
+                                <option value="3º A">3º A</option>
+                                <option value="3º B">3º B</option>
+                                <option value="3º C">3º C</option>
+                                <option value="4º A">4º A</option>
+                                <option value="4º B">4º B</option>
+                                <option value="4º C">4º C</option>
+                                <option value="5º A">5º A</option>
+                                <option value="5º B">5º B</option>
+                                <option value="5º C">5º C</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-aceitabilidade" id="iniciarTesteAceitabilidadeBtn" style="margin-top:8px;">
+                        <i class="fas fa-play"></i> Iniciar Teste de Aceitabilidade
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-glass">
+                <div class="section-title"><i class="fas fa-list"></i> Resultados dos Testes</div>
+                <div class="filters-bar">
+                    <select id="filtroAceitabilidadeAlimento"><option value="">Todos os alimentos</option></select>
+                    <select id="filtroAceitabilidadeTurma">
+                        <option value="">Todas as turmas</option>
+                        <option value="1º A">1º A</option>
+                        <option value="1º B">1º B</option>
+                        <option value="1º C">1º C</option>
+                        <option value="2º A">2º A</option>
+                        <option value="2º B">2º B</option>
+                        <option value="2º C">2º C</option>
+                        <option value="3º A">3º A</option>
+                        <option value="3º B">3º B</option>
+                        <option value="3º C">3º C</option>
+                        <option value="4º A">4º A</option>
+                        <option value="4º B">4º B</option>
+                        <option value="4º C">4º C</option>
+                        <option value="5º A">5º A</option>
+                        <option value="5º B">5º B</option>
+                        <option value="5º C">5º C</option>
+                    </select>
+                    <input type="text" id="filtroAceitabilidadeAluno" placeholder="Buscar por aluno" style="background:#12162A;border:1px solid #2A2F4A;border-radius:40px;padding:10px 20px;color:white;">
+                    <button class="btn-primary btn-secondary" id="filtrarAceitabilidadeBtn">🔍 Filtrar</button>
+                    <button class="btn-primary btn-secondary" id="limparAceitabilidadeBtn" style="background:#5A2A4A;">🗑️ Limpar todos os testes</button>
+                </div>
+                <div class="aceitabilidade-kpi-grid" id="aceitabilidadeKpiArea"></div>
+                <div id="aceitabilidadeListContainer" class="aceitabilidade-table-container"></div>
+            </div>
+        </div>
+
+        <!-- PANEL: ANALYTICS NOVO ALIMENTO -->
+        <div id="analyticsAceitabilidadePanel" class="panel">
+            <div class="card-glass">
+                <div class="section-title"><i class="fas fa-chart-bar"></i> Analytics - Teste de Novo Alimento</div>
+                <div class="filters-bar">
+                    <select id="analyticsAceitabilidadeAlimento"><option value="">Todos os alimentos</option></select>
+                    <select id="analyticsAceitabilidadeTurma">
+                        <option value="">Todas as turmas</option>
+                        <option value="1º A">1º A</option>
+                        <option value="1º B">1º B</option>
+                        <option value="1º C">1º C</option>
+                        <option value="2º A">2º A</option>
+                        <option value="2º B">2º B</option>
+                        <option value="2º C">2º C</option>
+                        <option value="3º A">3º A</option>
+                        <option value="3º B">3º B</option>
+                        <option value="3º C">3º C</option>
+                        <option value="4º A">4º A</option>
+                        <option value="4º B">4º B</option>
+                        <option value="4º C">4º C</option>
+                        <option value="5º A">5º A</option>
+                        <option value="5º B">5º B</option>
+                        <option value="5º C">5º C</option>
+                    </select>
+                    <button class="btn-primary btn-secondary" id="analyticsAceitabilidadeFilterBtn">🔍 Atualizar</button>
+                </div>
+                <div class="aceitabilidade-kpi-grid" id="analyticsAceitabilidadeKpiArea"></div>
+                <div class="chart-grid">
+                    <div class="chart-card"><div class="section-title">📊 Taxa de Aceitação por Alimento</div><div class="chart-container"><canvas id="chartAceitabilidadeAlimentos"></canvas></div></div>
+                    <div class="chart-card"><div class="section-title">📈 Evolução da Aceitação</div><div class="chart-container"><canvas id="chartAceitabilidadeEvolucao"></canvas></div></div>
+                </div>
+                <div class="chart-grid">
+                    <div class="chart-card"><div class="section-title">👥 Distribuição de Votos</div><div class="chart-container"><canvas id="chartAceitabilidadeDistribuicao"></canvas></div></div>
+                </div>
+                <div id="analyticsAceitabilidadeResumo" style="margin-top:20px;padding:16px;background:#12162A;border-radius:16px;"></div>
+            </div>
+        </div>
         
         <div class="footer"><i class="fas fa-code"></i> Desenvolvido por João_Lino | EMEF José Sabbag • Merenda Escolar 2026</div>
     </div>
@@ -381,6 +554,38 @@
     <div id="surveySuggestionArea" style="display:none;"><div class="survey-suggestion-area"><label><i class="fas fa-comment-dots"></i> Tem alguma sugestão culinária?</label><textarea id="popupSuggestion" rows="3" placeholder="Compartilhe sua ideia... 🍽️"></textarea></div>
     <button class="btn-primary" id="finishSurveyBtn" style="margin-top:20px;width:100%;"><i class="fas fa-check-circle"></i> Finalizar Pesquisa</button></div>
 </div></div>
+
+<!-- Popup para teste de aceitabilidade -->
+<div id="aceitabilidadePopup" class="survey-popup">
+    <div class="survey-popup-content" style="border-color:#00E5FF;">
+        <button class="survey-close" id="closeAceitabilidadePopupBtn" style="color:#00E5FF;"><i class="fas fa-times"></i></button>
+        <div style="text-align:center;">
+            <div style="font-size:4rem;margin-bottom:16px;">🍽️</div>
+            <div style="font-size:1.4rem;font-weight:800;color:#00E5FF;margin-bottom:8px;" id="aceitabilidadePopupTitulo">Teste de Aceitabilidade</div>
+            <div style="font-size:1.8rem;font-weight:700;color:#FFE6D5;margin-bottom:20px;" id="aceitabilidadePopupAlimento"></div>
+            <div style="color:#B4BAD6;margin-bottom:24px;" id="aceitabilidadePopupInfo"></div>
+            
+            <!-- Opções de voto -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:400px;margin:0 auto 20px;">
+                <button class="survey-option-btn voto-adorei" id="aceitabilidadeAdorei" style="font-size:0.9rem;padding:12px 16px;border-color:#4CAF50;">😍 ADOREI!<br><small style="font-size:0.65rem;opacity:0.8;">Amei! Comeria Sempre!</small></button>
+                <button class="survey-option-btn voto-gostei" id="aceitabilidadeGostei" style="font-size:0.9rem;padding:12px 16px;border-color:#2196F3;">😊 GOSTEI!<br><small style="font-size:0.65rem;opacity:0.8;">Eu gostei! Comeria outras vezes!</small></button>
+                <button class="survey-option-btn voto-nao-gostei" id="aceitabilidadeNaoGostei" style="font-size:0.9rem;padding:12px 16px;border-color:#F44336;">😞 NÃO GOSTEI<br><small style="font-size:0.65rem;opacity:0.8;">Não gostei muito! Talvez não queira comer de novo</small></button>
+                <button class="survey-option-btn voto-nao-comi" id="aceitabilidadeNaoComi" style="font-size:0.9rem;padding:12px 16px;border-color:#FFC107;">🤔 NÃO COMI<br><small style="font-size:0.65rem;opacity:0.8;">Não provei, mas quero experimentar</small></button>
+            </div>
+            
+            <!-- Área de comentário -->
+            <div class="survey-suggestion-area" style="border-top-color:#00E5FF;">
+                <label style="color:#B4BAD6;font-weight:600;"><i class="fas fa-comment-dots"></i> Escreva aqui o que você mais gostou ou o que podemos melhorar:</label>
+                <textarea id="aceitabilidadeComentario" rows="3" placeholder="Compartilhe sua opinião sobre o novo alimento..." style="width:100%;padding:12px 16px;background:#0F1322;border:1.5px solid #2A2F48;border-radius:20px;color:white;font-family:inherit;font-size:0.9rem;resize:vertical;margin-top:8px;"></textarea>
+            </div>
+            
+            <!-- Botão de finalizar -->
+            <button class="btn-finalizar-aceitabilidade" id="finalizarAceitabilidadeBtn">
+                <i class="fas fa-check-circle"></i> Finalizar e Registrar Voto
+            </button>
+        </div>
+    </div>
+</div>
 
 <div id="responseModal" class="modal"><div class="modal-content"><span class="modal-close" id="closeModalBtn">&times;</span><div id="modalBody"></div></div></div>
 <div id="saudeModal" class="modal-saude"><div class="modal-saude-content"><span class="modal-saude-close" id="closeSaudeModalBtn">&times;</span><h3 style="color:#4CAF50;margin-bottom:20px;text-align:center;"><i class="fas fa-heartbeat"></i> Dados de Saúde</h3><div id="saudeModalBody"></div></div></div>
@@ -460,6 +665,10 @@
     
     let students = [], charts = {};
     let currentAnswers = {}, currentFoods = [], currentIndex = 0, currentName = "", currentClass = "", currentShift = "";
+    
+    // Dados do teste de aceitabilidade
+    let aceitabilidadeData = [];
+    let alimentosCadastrados = [];
     
     function formatarDataBR(dataISO) {
         if(!dataISO) return '';
@@ -568,7 +777,6 @@
     
     async function saveAluno(aluno) {
         try {
-            // VERIFICAÇÃO PARA EVITAR DUPLICAÇÃO
             let { data: existing } = await supabase.from('respostas_alunos').select('id').eq('nome', aluno.name).eq('turma', aluno.turma).maybeSingle();
             
             if(existing) {
@@ -600,6 +808,110 @@
         try {
             let { data: alunos } = await supabase.from('respostas_alunos').select('id');
             if(alunos) for(let a of alunos) await supabase.from('respostas_alunos').delete().eq('id', a.id);
+            return true;
+        } catch(e) { return false; }
+    }
+    
+    // ============== FUNÇÕES ACEITABILIDADE (SUPABASE) ==============
+    
+    async function fetchAceitabilidade() {
+        try {
+            console.log('Buscando dados de aceitabilidade...');
+            let { data, error } = await supabase
+                .from('aceitabilidade_novos_alimentos')
+                .select('*')
+                .order('created_at', { ascending: false });
+                
+            if(error) {
+                console.error('Erro ao buscar aceitabilidade:', error);
+                return [];
+            }
+            
+            console.log('Dados de aceitabilidade encontrados:', data ? data.length : 0);
+            return data || [];
+        } catch(e) { 
+            console.error("Erro fetchAceitabilidade:", e); 
+            return []; 
+        }
+    }
+    
+    async function saveAceitabilidade(registro) {
+        try {
+            console.log('Tentando salvar:', registro);
+            
+            const { data, error } = await supabase
+                .from('aceitabilidade_novos_alimentos')
+                .insert([{
+                    alimento: registro.alimento,
+                    aluno_nome: registro.aluno_nome,
+                    aluno_turma: registro.aluno_turma || '',
+                    voto: registro.voto,
+                    comentario: registro.comentario || '',
+                    data_teste: new Date().toISOString().split('T')[0]
+                }])
+                .select();
+            
+            if (error) {
+                console.error('Erro do Supabase:', error);
+                alert('Erro ao salvar: ' + error.message);
+                return null;
+            }
+            
+            console.log('Dados salvos com sucesso:', data);
+            return data ? data[0] : null;
+        } catch(e) { 
+            console.error('Erro exceção:', e);
+            alert('Erro ao salvar! ' + (e.message || ''));
+            return null; 
+        }
+    }
+    
+    async function deleteAceitabilidade(id) {
+        try {
+            await supabase.from('aceitabilidade_novos_alimentos').delete().eq('id', id);
+            return true;
+        } catch(e) { return false; }
+    }
+    
+    async function deleteAllAceitabilidade() {
+        try {
+            let { data: registros } = await supabase.from('aceitabilidade_novos_alimentos').select('id');
+            if(registros) for(let r of registros) await supabase.from('aceitabilidade_novos_alimentos').delete().eq('id', r.id);
+            return true;
+        } catch(e) { return false; }
+    }
+    
+    // ============== FUNÇÕES ALIMENTOS CADASTRADOS (SUPABASE) ==============
+    
+    async function fetchAlimentosCadastrados() {
+        try {
+            let { data, error } = await supabase.from('alimentos_aceitabilidade').select('*').order('nome', { ascending: true });
+            if(error) throw error;
+            return data || [];
+        } catch(e) { console.error("Erro fetchAlimentosCadastrados:", e); return []; }
+    }
+    
+    async function saveAlimentoCadastrado(nome) {
+        try {
+            let { data: existing } = await supabase.from('alimentos_aceitabilidade').select('id').eq('nome', nome).maybeSingle();
+            if(existing) {
+                alert("Este alimento já está cadastrado!");
+                return null;
+            }
+            
+            let { data, error } = await supabase.from('alimentos_aceitabilidade').insert([{ nome: nome }]).select();
+            if(error) throw error;
+            return data ? data[0] : null;
+        } catch(e) { 
+            console.error("Erro saveAlimentoCadastrado:", e);
+            alert('Erro ao cadastrar alimento!');
+            return null; 
+        }
+    }
+    
+    async function deleteAlimentoCadastrado(id) {
+        try {
+            await supabase.from('alimentos_aceitabilidade').delete().eq('id', id);
             return true;
         } catch(e) { return false; }
     }
@@ -696,9 +1008,29 @@
     let restricoesDataCache = {};
     
     async function loadData() {
+        console.log('🔄 Carregando dados...');
+        
+        // Buscar alunos
         students = await fetchAlunos();
+        console.log('📚 Alunos carregados:', students.length);
+        
+        // Buscar dados de saúde
         saudeDataCache = await fetchSaudeData();
+        console.log('💚 Saúde carregada');
+        
+        // Buscar restrições
         restricoesDataCache = await fetchRestricoesData();
+        console.log('⚠️ Restrições carregadas');
+        
+        // Buscar dados de aceitabilidade
+        aceitabilidadeData = await fetchAceitabilidade();
+        console.log('🧪 Aceitabilidade carregada:', aceitabilidadeData.length);
+        
+        // Buscar alimentos cadastrados
+        alimentosCadastrados = await fetchAlimentosCadastrados();
+        console.log('🍽️ Alimentos cadastrados:', alimentosCadastrados.length);
+        
+        // Atualizar todas as interfaces
         updateFilters();
         showSuggestions();
         updateSaudeFilters();
@@ -706,7 +1038,16 @@
         renderRestricoesList();
         renderRestricoesKPI();
         renderAnalyticsSaude();
+        renderAceitabilidadeList();
+        renderAceitabilidadeKPI();
+        renderAnalyticsAceitabilidade();
+        renderListaAlimentosCadastrados();
+        atualizarSelectAlimentosTeste();
+        atualizarFiltrosAceitabilidade();
+        
         if(students.length) renderDashboard();
+        
+        console.log('✅ Todos os dados carregados!');
     }
     
     function updateFilters() {
@@ -718,7 +1059,86 @@
         let fs = document.getElementById("foodSelect");
         if(fs) fs.innerHTML = "<option value=''>Selecione um alimento</option>" + allFoodsForSelect.map(f => "<option value='"+f+"'>"+f+"</option>").join("");
         filterStudentList();
+        
+        atualizarSelectAlimentosTeste();
     }
+    
+    function atualizarSelectAlimentosTeste() {
+        let select = document.getElementById("selectAlimentoTeste");
+        if(!select) return;
+        select.innerHTML = "<option value=''>Selecione um alimento</option>" + 
+            alimentosCadastrados.map(a => `<option value="${escapeHtml(a.nome)}">${escapeHtml(a.nome)}</option>`).join("");
+    }
+    
+    function atualizarFiltrosAceitabilidade() {
+        // Atualiza filtros de alimentos
+        let alimentosAceitabilidade = [...new Set(aceitabilidadeData.map(a => a.alimento))];
+        let fa = document.getElementById("filtroAceitabilidadeAlimento");
+        if(fa) {
+            let currentVal = fa.value;
+            fa.innerHTML = "<option value=''>Todos os alimentos</option>" + 
+                alimentosAceitabilidade.map(a => `<option value="${escapeHtml(a)}">${escapeHtml(a)}</option>`).join("");
+            fa.value = currentVal;
+        }
+        
+        let aa = document.getElementById("analyticsAceitabilidadeAlimento");
+        if(aa) {
+            let currentVal = aa.value;
+            aa.innerHTML = "<option value=''>Todos os alimentos</option>" + 
+                alimentosAceitabilidade.map(a => `<option value="${escapeHtml(a)}">${escapeHtml(a)}</option>`).join("");
+            aa.value = currentVal;
+        }
+        
+        // Atualiza filtros de turma
+        let turmas = [...new Set(aceitabilidadeData.map(a => a.aluno_turma).filter(t => t && t.trim()))];
+        
+        let ft = document.getElementById("filtroAceitabilidadeTurma");
+        if(ft) {
+            let currentVal = ft.value;
+            ft.innerHTML = "<option value=''>Todas as turmas</option>" + 
+                turmas.map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join("");
+            ft.value = currentVal;
+        }
+        
+        let at = document.getElementById("analyticsAceitabilidadeTurma");
+        if(at) {
+            let currentVal = at.value;
+            at.innerHTML = "<option value=''>Todas as turmas</option>" + 
+                turmas.map(t => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join("");
+            at.value = currentVal;
+        }
+    }
+    
+    function renderListaAlimentosCadastrados() {
+        let container = document.getElementById("listaAlimentosCadastrados");
+        if(!container) return;
+        
+        if(alimentosCadastrados.length === 0) {
+            container.innerHTML = "<div style='text-align:center;color:#6C6F8F;padding:20px;'>Nenhum alimento cadastrado ainda.</div>";
+            return;
+        }
+        
+        let html = "";
+        alimentosCadastrados.forEach(a => {
+            html += `<div class="alimento-list-item">
+                <span><i class="fas fa-utensil-spoon" style="color:#00E5FF;"></i> ${escapeHtml(a.nome)}</span>
+                <button class="delete-btn" onclick="window.deleteAlimentoCadastradoUI(${a.id})" style="padding:4px 12px;font-size:0.7rem;"><i class="fas fa-trash"></i></button>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+    
+    window.deleteAlimentoCadastradoUI = async function(id) {
+        if(confirm("Remover este alimento da lista?")) {
+            let sucesso = await deleteAlimentoCadastrado(id);
+            if(sucesso) {
+                alimentosCadastrados = alimentosCadastrados.filter(a => a.id !== id);
+                renderListaAlimentosCadastrados();
+                atualizarSelectAlimentosTeste();
+                alert("Alimento removido!");
+            } else alert("Erro ao remover.");
+        }
+    };
     
     function updateSaudeFilters() {
         let classes = [...new Set(students.map(s => s.turma))];
@@ -730,7 +1150,6 @@
         if(fr) fr.innerHTML = "<option value=''>Todas as turmas</option>" + classes.map(c => "<option>"+c+"</option>").join("");
     }
     
-    // FUNÇÃO CORRIGIDA - sem JSON.stringify problemático
     function showSaudeDetalhesAluno(aluno) {
         let dados = saudeDataCache[aluno.id] || {};
         let idade = calcularIdade(dados.data_nascimento);
@@ -837,7 +1256,6 @@
         if(modal) modal.style.display = "flex";
     }
     
-    // Função auxiliar para buscar aluno por ID
     function showSaudeDetalhesAlunoById(alunoId) {
         let aluno = students.find(s => s.id == alunoId);
         if(aluno) showSaudeDetalhesAluno(aluno);
@@ -988,7 +1406,6 @@
         let suggestion = suggestionInput?.value.trim() || "";
         for(let f of currentFoods) if(!currentAnswers[f.item]) currentAnswers[f.item] = "TANTO FAZ";
         
-        // Verificar duplicação antes de salvar
         let alunoExistente = students.find(s => s.nome === currentName && s.turma === currentClass);
         if(alunoExistente) {
             alert("Este aluno já está cadastrado nesta turma!");
@@ -1475,6 +1892,420 @@
         if(resumoContainer) resumoContainer.innerHTML = resumoHtml || "<div class='empty-state'>Nenhum dado disponível</div>";
     }
     
+    // ============== FUNÇÕES ACEITABILIDADE ==============
+    
+    // Mapeamento dos votos para exibição
+    const votoMap = {
+        'adorei': { label: '😍 ADOREI!', desc: 'Amei! Comeria Sempre!', class: 'status-adorei' },
+        'gostei': { label: '😊 GOSTEI!', desc: 'Eu gostei! Comeria outras vezes!', class: 'status-gostei' },
+        'nao_gostei': { label: '😞 NÃO GOSTEI', desc: 'Não gostei muito! Talvez não queira comer de novo', class: 'status-nao-gostei' },
+        'nao_comi': { label: '🤔 NÃO COMI', desc: 'Não provei, mas quero experimentar', class: 'status-nao-comi' }
+    };
+    
+    // Variável para armazenar o voto selecionado
+    let votoSelecionado = null;
+    
+    async function cadastrarAlimento() {
+        let nome = document.getElementById("novoAlimentoNome")?.value.trim();
+        if(!nome) {
+            alert("Digite o nome do alimento!");
+            return;
+        }
+        
+        let resultado = await saveAlimentoCadastrado(nome);
+        if(resultado) {
+            alimentosCadastrados = await fetchAlimentosCadastrados();
+            renderListaAlimentosCadastrados();
+            atualizarSelectAlimentosTeste();
+            document.getElementById("novoAlimentoNome").value = "";
+            alert(`✅ Alimento "${nome}" cadastrado com sucesso!`);
+        }
+    }
+    
+    function iniciarTesteAceitabilidade() {
+        let alimento = document.getElementById("selectAlimentoTeste")?.value;
+        let nomeAluno = document.getElementById("nomeAlunoTeste")?.value.trim();
+        let turmaAluno = document.getElementById("turmaAlunoTeste")?.value;
+        
+        if(!alimento) {
+            alert("Selecione um alimento para testar!");
+            return;
+        }
+        if(!nomeAluno) {
+            alert("Digite o nome do aluno!");
+            return;
+        }
+        if(!turmaAluno) {
+            alert("Selecione a turma do aluno!");
+            return;
+        }
+        
+        // Verifica se o aluno já testou este alimento hoje
+        let hoje = new Date().toISOString().split('T')[0];
+        let jaTestadoHoje = aceitabilidadeData.some(a => 
+            a.alimento === alimento && 
+            a.aluno_nome === nomeAluno && 
+            a.data_teste === hoje
+        );
+        
+        if(jaTestadoHoje) {
+            alert(`O aluno ${nomeAluno} já testou "${alimento}" hoje!`);
+            return;
+        }
+        
+        // Reseta o voto selecionado
+        votoSelecionado = null;
+        
+        // Exibe o popup para o aluno
+        document.getElementById("aceitabilidadePopupAlimento").innerText = alimento;
+        document.getElementById("aceitabilidadePopupInfo").innerHTML = `
+            <i class="fas fa-user"></i> Aluno: <strong>${escapeHtml(nomeAluno)}</strong><br>
+            <i class="fas fa-graduation-cap"></i> Turma: <strong>${escapeHtml(turmaAluno)}</strong>
+        `;
+        document.getElementById("aceitabilidadePopupTitulo").innerText = `🍽️ Teste: ${alimento}`;
+        document.getElementById("aceitabilidadeComentario").value = "";
+        document.getElementById("aceitabilidadePopup").style.display = "flex";
+        
+        // Armazena os dados para uso no registro do voto
+        window._aceitabilidadeAtual = {
+            alimento: alimento,
+            aluno_nome: nomeAluno,
+            aluno_turma: turmaAluno
+        };
+        
+        // Remove destaque de todos os botões
+        document.querySelectorAll('#aceitabilidadePopup .survey-option-btn').forEach(btn => {
+            btn.style.boxShadow = 'none';
+            btn.style.transform = 'scale(1)';
+            btn.style.borderWidth = '2px';
+        });
+    }
+    
+    function selecionarVoto(voto) {
+        votoSelecionado = voto;
+        // Destaca o botão selecionado
+        document.querySelectorAll('#aceitabilidadePopup .survey-option-btn').forEach(btn => {
+            btn.style.boxShadow = 'none';
+            btn.style.transform = 'scale(1)';
+            btn.style.borderWidth = '2px';
+        });
+        // Encontra o botão correspondente e destaca
+        const botoes = {
+            'adorei': document.getElementById('aceitabilidadeAdorei'),
+            'gostei': document.getElementById('aceitabilidadeGostei'),
+            'nao_gostei': document.getElementById('aceitabilidadeNaoGostei'),
+            'nao_comi': document.getElementById('aceitabilidadeNaoComi')
+        };
+        if (botoes[voto]) {
+            botoes[voto].style.boxShadow = '0 0 20px rgba(0,229,255,0.5)';
+            botoes[voto].style.transform = 'scale(1.05)';
+            botoes[voto].style.borderWidth = '3px';
+        }
+    }
+    
+    async function finalizarAceitabilidade() {
+        if (!votoSelecionado) {
+            alert("Por favor, selecione uma opção de voto antes de finalizar!");
+            return;
+        }
+        
+        let atual = window._aceitabilidadeAtual;
+        if(!atual) {
+            alert("Erro: Nenhum teste em andamento!");
+            return;
+        }
+        
+        let comentario = document.getElementById("aceitabilidadeComentario")?.value.trim() || "";
+        
+        let registro = {
+            alimento: atual.alimento,
+            aluno_nome: atual.aluno_nome,
+            aluno_turma: atual.aluno_turma,
+            voto: votoSelecionado,
+            comentario: comentario
+        };
+        
+        let resultado = await saveAceitabilidade(registro);
+        if(resultado) {
+            aceitabilidadeData.unshift(resultado);
+            document.getElementById("aceitabilidadePopup").style.display = "none";
+            window._aceitabilidadeAtual = null;
+            votoSelecionado = null;
+            renderAceitabilidadeList();
+            renderAceitabilidadeKPI();
+            renderAnalyticsAceitabilidade();
+            atualizarFiltrosAceitabilidade();
+            updateFilters();
+            alert(`✅ Voto registrado para "${registro.alimento}"!`);
+        } else {
+            alert("Erro ao registrar voto! Verifique o console para mais detalhes.");
+        }
+    }
+    
+    function fecharAceitabilidadePopup() {
+        if(confirm("Deseja cancelar o teste? As informações não serão salvas.")) {
+            document.getElementById("aceitabilidadePopup").style.display = "none";
+            window._aceitabilidadeAtual = null;
+            votoSelecionado = null;
+        }
+    }
+    
+    function renderAceitabilidadeList() {
+        console.log('Renderizando lista de aceitabilidade, total:', aceitabilidadeData.length);
+        
+        let alimentoFiltro = document.getElementById("filtroAceitabilidadeAlimento")?.value || "";
+        let turmaFiltro = document.getElementById("filtroAceitabilidadeTurma")?.value || "";
+        let alunoFiltro = (document.getElementById("filtroAceitabilidadeAluno")?.value || "").toLowerCase();
+        
+        let filtered = aceitabilidadeData;
+        if(alimentoFiltro) filtered = filtered.filter(a => a.alimento === alimentoFiltro);
+        if(turmaFiltro) filtered = filtered.filter(a => a.aluno_turma === turmaFiltro);
+        if(alunoFiltro) filtered = filtered.filter(a => a.aluno_nome.toLowerCase().includes(alunoFiltro));
+        
+        console.log('Filtrados:', filtered.length);
+        
+        let container = document.getElementById("aceitabilidadeListContainer");
+        if(!container) return;
+        
+        if(filtered.length === 0) {
+            container.innerHTML = "<div class='empty-state'><i class='fas fa-flask'></i><br>Nenhum teste de aceitabilidade realizado ainda.</div>";
+            return;
+        }
+        
+        let html = "<table class='aceitabilidade-table'><thead><tr><th>Alimento</th><th>Aluno</th><th>Turma</th><th>Voto</th><th>Comentário</th><th>Data</th><th>Ação</th></tr></thead><tbody>";
+        
+        filtered.forEach(a => {
+            let votoInfo = votoMap[a.voto] || { label: a.voto || 'Desconhecido', class: 'status-regular' };
+            
+            html += `<tr>
+                <td><strong>${escapeHtml(a.alimento)}</strong></td>
+                <td>${escapeHtml(a.aluno_nome)}</td>
+                <td>${escapeHtml(a.aluno_turma) || '—'}</td>
+                <td><span class='aceitabilidade-status ${votoInfo.class}'>${votoInfo.label}</span><br><small style="color:#8A8FAD;font-size:0.6rem;">${votoInfo.desc}</small></td>
+                <td>${a.comentario ? escapeHtml(a.comentario.substring(0,50)) + (a.comentario.length > 50 ? '...' : '') : '—'}</td>
+                <td>${a.data_teste ? formatarDataBR(a.data_teste) : '—'}</td>
+                <td><button class='delete-btn' onclick='event.stopPropagation(); window.deleteAceitabilidadeRegistro(${a.id})'><i class='fas fa-trash'></i> Excluir</button></td>
+            </tr>`;
+        });
+        
+        html += "</tbody></table>";
+        container.innerHTML = html;
+    }
+    
+    async function deleteAceitabilidadeRegistro(id) {
+        if(confirm("Remover este registro de teste?")) {
+            let sucesso = await deleteAceitabilidade(id);
+            if(sucesso) {
+                aceitabilidadeData = aceitabilidadeData.filter(a => a.id !== id);
+                renderAceitabilidadeList();
+                renderAceitabilidadeKPI();
+                renderAnalyticsAceitabilidade();
+                atualizarFiltrosAceitabilidade();
+                updateFilters();
+                alert("Registro removido!");
+            } else alert("Erro ao remover.");
+        }
+    }
+    
+    async function deleteAllAceitabilidadeData() {
+        if(aceitabilidadeData.length === 0) { alert("Sem dados!"); return; }
+        if(confirm("APAGAR TODOS OS TESTES DE ACEITABILIDADE? IRREVERSÍVEL!")) {
+            let success = await deleteAllAceitabilidade();
+            if(success) {
+                aceitabilidadeData = await fetchAceitabilidade();
+                renderAceitabilidadeList();
+                renderAceitabilidadeKPI();
+                renderAnalyticsAceitabilidade();
+                atualizarFiltrosAceitabilidade();
+                updateFilters();
+                alert("Todos os testes removidos!");
+            } else alert("Erro!");
+        }
+    }
+    
+    function renderAceitabilidadeKPI() {
+        let total = aceitabilidadeData.length;
+        let votos = { adorei: 0, gostei: 0, nao_gostei: 0, nao_comi: 0 };
+        let alimentos = new Set();
+        let alunos = new Set();
+        
+        aceitabilidadeData.forEach(a => {
+            alimentos.add(a.alimento);
+            alunos.add(a.aluno_nome + '|' + a.aluno_turma);
+            if(a.voto === "adorei") votos.adorei++;
+            else if(a.voto === "gostei") votos.gostei++;
+            else if(a.voto === "nao_gostei") votos.nao_gostei++;
+            else if(a.voto === "nao_comi") votos.nao_comi++;
+        });
+        
+        let totalAceitacao = votos.adorei + votos.gostei;
+        let taxaAceitacao = total ? Math.round((totalAceitacao / total) * 100) : 0;
+        let totalAlimentos = alimentos.size;
+        let totalAlunos = alunos.size;
+        
+        let kpiArea = document.getElementById("aceitabilidadeKpiArea");
+        if(kpiArea) kpiArea.innerHTML = `
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${total}</div><div>Total de Votos</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${totalAlimentos}</div><div>Alimentos Testados</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${totalAlunos}</div><div>Alunos Participantes</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${taxaAceitacao}%</div><div>Taxa de Aceitação</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${votos.adorei}</div><div>😍 ADOREI!</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${votos.gostei}</div><div>😊 GOSTEI!</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${votos.nao_gostei}</div><div>😞 NÃO GOSTEI</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${votos.nao_comi}</div><div>🤔 NÃO COMI</div></div>
+        `;
+    }
+    
+    function renderAnalyticsAceitabilidade() {
+        let alimentoFiltro = document.getElementById("analyticsAceitabilidadeAlimento")?.value || "";
+        let turmaFiltro = document.getElementById("analyticsAceitabilidadeTurma")?.value || "";
+        
+        let filtered = aceitabilidadeData;
+        if(alimentoFiltro) filtered = filtered.filter(a => a.alimento === alimentoFiltro);
+        if(turmaFiltro) filtered = filtered.filter(a => a.aluno_turma === turmaFiltro);
+        
+        let total = filtered.length;
+        let votos = { adorei: 0, gostei: 0, nao_gostei: 0, nao_comi: 0 };
+        let porAlimento = {};
+        let porData = {};
+        let alunosVotaram = new Set();
+        
+        filtered.forEach(a => {
+            alunosVotaram.add(a.aluno_nome + '|' + a.aluno_turma);
+            if(a.voto === "adorei") votos.adorei++;
+            else if(a.voto === "gostei") votos.gostei++;
+            else if(a.voto === "nao_gostei") votos.nao_gostei++;
+            else if(a.voto === "nao_comi") votos.nao_comi++;
+            
+            if(!porAlimento[a.alimento]) porAlimento[a.alimento] = { adorei: 0, gostei: 0, nao_gostei: 0, nao_comi: 0 };
+            porAlimento[a.alimento][a.voto]++;
+            
+            if(a.data_teste) {
+                if(!porData[a.data_teste]) porData[a.data_teste] = { adorei: 0, gostei: 0, nao_gostei: 0, nao_comi: 0 };
+                porData[a.data_teste][a.voto]++;
+            }
+        });
+        
+        let totalAceitacao = votos.adorei + votos.gostei;
+        let taxaAceitacao = total ? Math.round((totalAceitacao / total) * 100) : 0;
+        
+        // KPI
+        let kpiArea = document.getElementById("analyticsAceitabilidadeKpiArea");
+        if(kpiArea) kpiArea.innerHTML = `
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${total}</div><div>Votos Filtrados</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${alunosVotaram.size}</div><div>Alunos que Votaram</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${taxaAceitacao}%</div><div>Taxa de Aceitação</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${votos.adorei}</div><div>😍 ADOREI!</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${votos.gostei}</div><div>😊 GOSTEI!</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${votos.nao_gostei}</div><div>😞 NÃO GOSTEI</div></div>
+            <div class='aceitabilidade-kpi-card'><div class='aceitabilidade-kpi-value'>${votos.nao_comi}</div><div>🤔 NÃO COMI</div></div>
+        `;
+        
+        // Gráfico de aceitação por alimento
+        let alimentos = Object.keys(porAlimento);
+        let aceitacaoPorAlimento = alimentos.map(a => {
+            let dados = porAlimento[a];
+            let totalA = dados.adorei + dados.gostei + dados.nao_gostei + dados.nao_comi;
+            return totalA ? Math.round(((dados.adorei + dados.gostei) / totalA) * 100) : 0;
+        });
+        
+        if(window.aceitabilidadeAlimentosChart) window.aceitabilidadeAlimentosChart.destroy();
+        let chartAlimentos = document.getElementById("chartAceitabilidadeAlimentos");
+        if(chartAlimentos && alimentos.length > 0) {
+            window.aceitabilidadeAlimentosChart = new Chart(chartAlimentos, {
+                type: "bar",
+                data: {
+                    labels: alimentos.map(a => a.length > 15 ? a.substring(0,15) + '...' : a),
+                    datasets: [{
+                        label: "Taxa de Aceitação (%)",
+                        data: aceitacaoPorAlimento,
+                        backgroundColor: aceitacaoPorAlimento.map(v => v >= 70 ? "#4CAF50" : (v >= 40 ? "#FFC107" : "#F44336")),
+                        borderRadius: 12
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: { y: { min: 0, max: 100, ticks: { color: "#B4BAD6" } } }
+                }
+            });
+        }
+        
+        // Gráfico de evolução
+        let datas = Object.keys(porData).sort();
+        let evolucaoAceitacao = datas.map(d => {
+            let dados = porData[d];
+            let totalD = dados.adorei + dados.gostei + dados.nao_gostei + dados.nao_comi;
+            return totalD ? Math.round(((dados.adorei + dados.gostei) / totalD) * 100) : 0;
+        });
+        
+        if(window.aceitabilidadeEvolucaoChart) window.aceitabilidadeEvolucaoChart.destroy();
+        let chartEvolucao = document.getElementById("chartAceitabilidadeEvolucao");
+        if(chartEvolucao && datas.length > 0) {
+            window.aceitabilidadeEvolucaoChart = new Chart(chartEvolucao, {
+                type: "line",
+                data: {
+                    labels: datas.map(d => formatarDataBR(d)),
+                    datasets: [{
+                        label: "Aceitação por Data (%)",
+                        data: evolucaoAceitacao,
+                        borderColor: "#00E5FF",
+                        backgroundColor: "rgba(0,229,255,0.1)",
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: { y: { min: 0, max: 100, ticks: { color: "#B4BAD6" } } }
+                }
+            });
+        }
+        
+        // Gráfico de distribuição
+        if(window.aceitabilidadeDistribuicaoChart) window.aceitabilidadeDistribuicaoChart.destroy();
+        let chartDistribuicao = document.getElementById("chartAceitabilidadeDistribuicao");
+        if(chartDistribuicao) {
+            window.aceitabilidadeDistribuicaoChart = new Chart(chartDistribuicao, {
+                type: "doughnut",
+                data: {
+                    labels: ["😍 ADOREI!", "😊 GOSTEI!", "😞 NÃO GOSTEI", "🤔 NÃO COMI"],
+                    datasets: [{
+                        data: [votos.adorei, votos.gostei, votos.nao_gostei, votos.nao_comi],
+                        backgroundColor: ["#4CAF50", "#2196F3", "#F44336", "#FFC107"]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: { labels: { color: "#B4BAD6" } }
+                    }
+                }
+            });
+        }
+        
+        // Resumo
+        let resumoContainer = document.getElementById("analyticsAceitabilidadeResumo");
+        if(resumoContainer) {
+            let status = taxaAceitacao >= 70 ? "✅ ALTO - Alimento bem aceito!" : (taxaAceitacao >= 40 ? "⚠️ REGULAR - Pode ser melhorado" : "❌ BAIXO - Reavaliar inclusão");
+            resumoContainer.innerHTML = `
+                <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+                    <div><strong style="color:#00E5FF;">📊 Análise Geral</strong></div>
+                    <div><span style="color:#B4BAD6;">Total de votos:</span> <strong>${total}</strong></div>
+                    <div><span style="color:#B4BAD6;">Taxa de aceitação:</span> <strong style="color:${taxaAceitacao >= 70 ? '#4CAF50' : (taxaAceitacao >= 40 ? '#FFC107' : '#F44336')}">${taxaAceitacao}%</strong></div>
+                    <div><span style="color:#B4BAD6;">Status:</span> <strong>${status}</strong></div>
+                </div>
+                ${total > 0 ? `<div style="margin-top:12px;padding:10px;background:rgba(0,229,255,0.05);border-radius:12px;font-size:0.85rem;color:#8A8FAD;">
+                    <i class="fas fa-info-circle"></i> Alimentos com aceitação acima de 70% são considerados bem aceitos. Abaixo de 40% indicam baixa aceitação.
+                </div>` : ''}
+            `;
+        }
+    }
+    
+    // ============== FUNÇÕES DASHBOARD ==============
+    
     function destroyCharts() { Object.keys(charts).forEach(k => { if(charts[k]) { charts[k].destroy(); charts[k] = null; } }); }
     
     function getMetrics() {
@@ -1671,6 +2502,17 @@
         if(panelId === "saude") renderSaudeList();
         if(panelId === "analyticsSaude") renderAnalyticsSaude();
         if(panelId === "restricoes") { renderRestricoesList(); renderRestricoesKPI(); }
+        if(panelId === "testeAceitabilidade") { 
+            renderAceitabilidadeList(); 
+            renderAceitabilidadeKPI(); 
+            renderListaAlimentosCadastrados();
+            atualizarSelectAlimentosTeste();
+            atualizarFiltrosAceitabilidade();
+        }
+        if(panelId === "analyticsAceitabilidade") { 
+            renderAnalyticsAceitabilidade();
+            atualizarFiltrosAceitabilidade();
+        }
         if(window.innerWidth <= 768) { 
             let sidebar = document.getElementById("sidebar");
             let overlay = document.getElementById("menuOverlay");
@@ -1719,6 +2561,17 @@
     window.toggleMenu = toggleMenu;
     window.goToPreviousQuestion = goToPreviousQuestion;
     window.cancelSurvey = cancelSurvey;
+    window.iniciarTesteAceitabilidade = iniciarTesteAceitabilidade;
+    window.selecionarVoto = selecionarVoto;
+    window.finalizarAceitabilidade = finalizarAceitabilidade;
+    window.fecharAceitabilidadePopup = fecharAceitabilidadePopup;
+    window.deleteAceitabilidadeRegistro = deleteAceitabilidadeRegistro;
+    window.deleteAllAceitabilidadeData = deleteAllAceitabilidadeData;
+    window.renderAceitabilidadeList = renderAceitabilidadeList;
+    window.renderAceitabilidadeKPI = renderAceitabilidadeKPI;
+    window.renderAnalyticsAceitabilidade = renderAnalyticsAceitabilidade;
+    window.cadastrarAlimento = cadastrarAlimento;
+    window.deleteAlimentoCadastradoUI = deleteAlimentoCadastradoUI;
     
     function initializeSystem() {
         document.getElementById("menuToggle")?.addEventListener("click", toggleMenu);
@@ -1762,6 +2615,26 @@
             if(restricaoModal) restricaoModal.style.display = "none";
         });
         document.getElementById("responseModal")?.addEventListener("click", function(e) { if(e.target === this) closeModal(); });
+        
+        // Eventos do teste de aceitabilidade
+        document.getElementById("cadastrarAlimentoBtn")?.addEventListener("click", cadastrarAlimento);
+        document.getElementById("iniciarTesteAceitabilidadeBtn")?.addEventListener("click", iniciarTesteAceitabilidade);
+        document.getElementById("closeAceitabilidadePopupBtn")?.addEventListener("click", fecharAceitabilidadePopup);
+        
+        // Botões de voto - selecionam o voto sem finalizar
+        document.getElementById("aceitabilidadeAdorei")?.addEventListener("click", () => selecionarVoto("adorei"));
+        document.getElementById("aceitabilidadeGostei")?.addEventListener("click", () => selecionarVoto("gostei"));
+        document.getElementById("aceitabilidadeNaoGostei")?.addEventListener("click", () => selecionarVoto("nao_gostei"));
+        document.getElementById("aceitabilidadeNaoComi")?.addEventListener("click", () => selecionarVoto("nao_comi"));
+        
+        // Botão de finalizar
+        document.getElementById("finalizarAceitabilidadeBtn")?.addEventListener("click", finalizarAceitabilidade);
+        
+        document.getElementById("filtrarAceitabilidadeBtn")?.addEventListener("click", renderAceitabilidadeList);
+        document.getElementById("limparAceitabilidadeBtn")?.addEventListener("click", deleteAllAceitabilidadeData);
+        document.getElementById("analyticsAceitabilidadeFilterBtn")?.addEventListener("click", renderAnalyticsAceitabilidade);
+        document.getElementById("analyticsAceitabilidadeAlimento")?.addEventListener("change", renderAnalyticsAceitabilidade);
+        document.getElementById("analyticsAceitabilidadeTurma")?.addEventListener("change", renderAnalyticsAceitabilidade);
         
         loadData();
     }
